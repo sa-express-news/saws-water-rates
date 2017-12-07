@@ -3,11 +3,34 @@ export interface SingleRateData {
     rate: number;
 }
 
-interface VaryingRateData {
-    threshold: number;
+export interface DoubleRateData {
+    max: number;
     lowRate: number;
     highRate: number;
 }
+
+export const rates2015: DoubleRateData[] = [
+    {
+        max: 5985,
+        lowRate: .2291,
+        highRate: .2291
+    },
+    {
+        max: 12717,
+        lowRate: .3315,
+        highRate: .3442
+    },
+    {
+        max: 17205,
+        lowRate: .4675,
+        highRate: .4977
+    },
+    {
+        max: Infinity,
+        lowRate: .8185,
+        highRate: .9469
+    }
+]
 
 
 export const rates2016: SingleRateData[] = [
