@@ -44,3 +44,37 @@ export const rates2016: SingleRateData[] = [
         rate: .9818
     }
 ];
+export const rates2018: SingleRateData[] = [
+    {
+        max: 2992,
+        rate: .1734
+    },
+    {
+        max: 4489,
+        rate: .3034
+    },
+    {
+        max: 5985,
+        rate: .39
+    },
+    {
+        max: 7481,
+        rate: .4767
+    },
+    {
+        max: 10473,
+        rate: .5635
+    },
+    {
+        max: 14962,
+        rate: .6502
+    },
+    {
+        max: 20199,
+        rate: .7801
+    },
+    {
+        max: Infinity,
+        rate: 1.1267
+    }
+];
