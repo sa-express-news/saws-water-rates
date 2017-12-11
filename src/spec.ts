@@ -4,17 +4,17 @@ import { assert } from 'chai';
 import { generate2016Rate, generate2015Rate } from './index';
 
 describe('2015 tax calculator', () => {
-    it('should return 580.32 for 2500 gallons', () => {
+    it('should return 13.3 for 2500 gallons', () => {
         const rate = generate2015Rate(2500);
-        assert.strictEqual(rate, 580.32);
+        assert.strictEqual(rate, 13.3);
     });
-    it('should return 4804.29 for 15129.66 gallons', () => {
+    it('should return 55.54 for 15129.66 gallons', () => {
         const rate = generate2015Rate(15129.66);
-        assert.strictEqual(rate, 4804.29);
+        assert.strictEqual(rate, 55.54);
     });
-    it('should return 6190.73 for 17652.36 gallons', () => {
+    it('should return 69.4 for 17652.36 gallons', () => {
         const rate = generate2015Rate(17652.36);
-        assert.strictEqual(rate, 6190.73);
+        assert.strictEqual(rate, 69.4);
     });
 });
 
