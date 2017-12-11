@@ -36,35 +36,35 @@ export const rates2015: DoubleRateData[] = [
 export const rates2016: SingleRateData[] = [
     {
         max: 2992,
-        rate: .1511
+        rate: .001511
     },
     {
         max: 4489,
-        rate: .2644
+        rate: .002644
     },
     {
         max: 5985,
-        rate: .3398
+        rate: .003398
     },
     {
         max: 7481,
-        rate: .4155
+        rate: .004155
     },
     {
         max: 10473,
-        rate: .491
+        rate: .00491
     },
     {
         max: 14962,
-        rate: .5666
+        rate: .005666
     },
     {
         max: 20199,
-        rate: .6799
+        rate: .006799
     },
     {
         max: Infinity,
-        rate: .9818
+        rate: .009818
     }
 ];
 export const rates2018: SingleRateData[] = [

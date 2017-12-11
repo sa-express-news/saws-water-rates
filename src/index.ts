@@ -38,15 +38,13 @@ const generateTwoRateYearRate = (gallonsUsed: number, fixedFee: number, rateData
         const low = index === 0 ? 0 : rateData[index - 1].max;
         const high = datum.max;
 
+        let monthlyAverageUsage = 0;
         if (gallonsUsed > low && gallonsUsed > high) {
-            const monthlyAverageUsage = (high - low) / 12;
-            totalTaxBill += ((monthlyAverageUsage * datum.lowRate * 7) + (monthlyAverageUsage * datum.highRate * 5));
-            console.log(`In block ${index + 1}, adding ${((monthlyAverageUsage * datum.lowRate * 7) + (monthlyAverageUsage * datum.highRate * 5))} to the total.`);
+            monthlyAverageUsage = (high - low) / 12;
         } else if (gallonsUsed > low && gallonsUsed <= high) {
-            const monthlyAverageUsage = (gallonsUsed - low) / 12;
-            totalTaxBill += ((monthlyAverageUsage * datum.lowRate * 7) + (monthlyAverageUsage * datum.highRate * 5));
-            console.log(`In block ${index + 1}, adding ${((monthlyAverageUsage * datum.lowRate * 7) + (monthlyAverageUsage * datum.highRate * 5))} to the total.`);
+            monthlyAverageUsage = (gallonsUsed - low) / 12;
         }
+        totalTaxBill += ((monthlyAverageUsage * datum.lowRate * 7) + (monthlyAverageUsage * datum.highRate * 5));
     });
 
     totalTaxBill += fixedFee;
