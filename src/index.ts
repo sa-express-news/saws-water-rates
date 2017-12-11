@@ -1,4 +1,5 @@
-import { SingleRateData, DoubleRateData, rates2015, rates2016 } from './data';
+import { SingleRateData, DoubleRateData, rates2015, rates2016, rates2018 } from './data';
+import rateValues from './calculation-rates';
 
 const FIXED_FEE_2015 = 7.57;
 const FIXED_FEE_2016 = 10.72;
@@ -10,6 +11,10 @@ export const generate2015Rate = (gallonsUsed: number): number => {
 
 export const generate2016Rate = (gallonsUsed: number): number => {
     return generateSingleRateYearRate(gallonsUsed, FIXED_FEE_2016, rates2016);
+}
+
+export const generate2018Rate = (gallonsUsed: number): number => {
+    return generateSingleRateYearRate(gallonsUsed, FIXED_FEE_2018, rates2018);
 }
 
 const generateSingleRateYearRate = (gallonsUsed: number, fixedFee: number, rateData: SingleRateData[]): number => {
@@ -51,3 +56,20 @@ const generateTwoRateYearRate = (gallonsUsed: number, fixedFee: number, rateData
 
     return +totalTaxBill.toFixed(2);
 }
+
+const calculatePercentChange = (firstValue: number, secondValue: number): number => {
+    return ((secondValue - firstValue) / firstValue) * 100;
+}
+
+
+console.log('Gallons | 2015 | 2016 | 2018 | 15-16 % ch | 16-18 % ch');
+
+rateValues.forEach((value) => {
+    const rate2015 = generate2015Rate(value);
+    const rate2016 = generate2016Rate(value);
+    const rate2018 = generate2018Rate(value);
+    const percentChange15To16 = calculatePercentChange(rate2015, rate2016);
+    const percentChange16To18 = calculatePercentChange(rate2016, rate2018);
+    console.log(`${value} | ${rate2015} | ${rate2016} | ${rate2018} | ${percentChange15To16} | ${percentChange16To18}`);
+});
+
