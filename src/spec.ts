@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import { assert } from 'chai';
 
-import { generate2016Rate, generate2015Rate } from './index';
+import { generate2018Rate, generate2016Rate, generate2015Rate } from './index';
 
 describe('2015 tax calculator', () => {
     it('should return 13.3 for 2500 gallons', () => {
@@ -37,3 +37,22 @@ describe('2016 tax calculator', () => {
         assert.strictEqual(rate, 162.33);
     });
 });
+
+describe('2018 tax calculator', () => {
+    it('should return 17.96 for 2992 gallons', () => {
+        const rate = generate2018Rate(2992);
+        assert.strictEqual(rate, 17.96);
+    });
+    it('should return 28.33 for 5985 gallons', () => {
+        const rate = generate2018Rate(5985);
+        assert.strictEqual(rate, 28.33);
+    });
+    it('should return 122.38 for 20200 gallons', () => {
+        const rate = generate2018Rate(20200);
+        assert.strictEqual(rate, 122.38);
+    });
+    it('should return 1074.67 for 104720 gallons', () => {
+        const rate = generate2018Rate(104720);
+        assert.strictEqual(rate, 1074.67);
+    });
+})
