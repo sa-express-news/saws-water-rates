@@ -2,13 +2,14 @@
   "name": "saws-rates",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "calculate.js",
   "scripts": {
     "pretest": "tsc",
     "test": "mocha ./dist/**/**/spec.js",
-    "build": "tsc",
     "prestart": "npm run build",
-    "start": "node dist/index.js"
+    "start": "node dist/calculate.js",
+    "prebuild": "tsc",
+    "build": "NODE_ENV='production' webpack"
   },
   "author": "Kia Farhang",
   "license": "ISC",
