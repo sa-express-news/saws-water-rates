@@ -16,7 +16,15 @@
     "@types/chai": "^4.0.8",
     "@types/mocha": "^2.2.44",
     "chai": "^4.1.2",
+    "css-loader": "^0.28.7",
     "mocha": "^4.0.1",
-    "typescript": "^2.6.2"
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.11",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "vue": "git+https://github.com/DanielRosenwasser/vue.git#540a38fb21adb7a7bc394c65e23e6cffb36cd867"
   }
 }
