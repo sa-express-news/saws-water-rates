@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import { assert } from 'chai';
 
-import { generate2018Rate, generate2016Rate, generate2015Rate } from './index';
+import { generate2018Rate, generate2016Rate, generate2015Rate } from './calculate';
 
 describe('2015 tax calculator', () => {
     it('should return 13.3 for 2500 gallons', () => {
