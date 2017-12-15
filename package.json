@@ -22,7 +22,7 @@
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
     "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.11",
+    "vue-template-compiler": "^2.2.1",
     "webpack": "^3.10.0"
   },
   "dependencies": {
